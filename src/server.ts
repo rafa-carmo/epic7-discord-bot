@@ -15,9 +15,9 @@ client.on("ready", ()=>{
 
 client.on("message", async (message: Message) => {
     console.log(message)
-    if(message.author.bot) return
+    if (message.author.bot) return
     if(message.channel.type === 'DM') return
-    console.log(message.content)
+    
 
     const args = message.content.slice(1).trim().split(/ +/g)
     const command = args.shift()?.toLowerCase()
