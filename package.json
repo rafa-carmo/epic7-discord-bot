@@ -4,16 +4,28 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon src/bot.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node .dist/bot.js",
+    "postinstall": "npm run build",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
-    "ts-node": "^10.7.0"
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.2.0",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "ts-node": "^10.7.0",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/import-types-preset": "^2.1.15",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-operations": "^2.3.5",
+    "@graphql-codegen/typescript-urql": "^3.5.7",
     "nodemon": "^2.0.15",
     "typescript": "^4.6.3"
   }

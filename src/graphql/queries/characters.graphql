@@ -1,0 +1,37 @@
+
+
+query CharactersSearch($search: String) {
+  characters(where: {name_contains: $search}) {
+    name
+    slug
+    characterStatus {
+      atk
+      hp
+      def
+      criticalHitChance
+      criticalHitDamage
+      dualAtackChance
+      effectiveness
+      effectResistance
+      speed
+    }
+    memoryImprint {
+      imprintRelease
+      imprintConcentration
+      position {
+        url
+      }
+    }
+    characterSkills {
+      title
+      description
+      enhancement
+      icon {
+        url
+      }
+    }
+    image {
+      url
+    }
+  }
+}
