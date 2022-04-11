@@ -121,7 +121,7 @@ export default {
     }
 
 
-    const createEmbed: (skill:typeof skills[0], page: number )=>MessageEmbed  = (skill) => {
+    const createEmbed: (skill:typeof skills[0], page: number ) => MessageEmbed  = (skill, page) => {
         return new MessageEmbed()
         .setColor('#0099ff')
         .setTitle(character.name)

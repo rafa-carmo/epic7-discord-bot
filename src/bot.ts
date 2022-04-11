@@ -5,15 +5,20 @@ import path from 'path'
 
 
 let client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
+
 client.on("ready", async () => {
     new WOK(client, {
-        commandsDir: path.join(__dirname, 'commands'),
-        typeScript: true
-    })
+    commandsDir: path.join(__dirname, 'commands'),
+    typeScript: true
+})
 })
 
+client.on('shardError', error => {
+	console.error('A websocket connection encountered an error:', error);
+});
 
 client.login(process.env.TOKEN);
+
 
 
 
