@@ -2,7 +2,6 @@ import 'dotenv/config'
 import {Client, Intents,} from "discord.js";
 import WOK from 'wokcommands'
 import path from 'path'
-import express from 'express'
 
 
 
@@ -32,15 +31,5 @@ else{
     client.login(process.env.TOKEN);
 
 
-
-
-    const app = express()
-    app.use(express.json())
-
-    app.get('/', (_, res) => {
-        return res.sendStatus(200)   
-    })
-
-    app.listen(process.env.PORT || 5000, ()=>{console.log('server iniciado')})
 }
 
