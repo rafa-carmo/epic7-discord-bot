@@ -6,17 +6,17 @@ import path from 'path'
 
 
 
-import cluster from 'cluster'
-if (cluster.isMaster) {
+// import cluster from 'cluster'
+// if (cluster.isMaster) {
 
-     cluster.fork();
+//      cluster.fork();
    
-   cluster.on('exit', function(worker){
-      console.log('Worker ' + worker.id + ' died..');
-      cluster.fork();
-   });
-}
-else{
+//    cluster.on('exit', function(worker){
+//       console.log('Worker ' + worker.id + ' died..');
+//       cluster.fork();
+//    });
+// }
+// else{
 
     let client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
 
@@ -31,5 +31,5 @@ else{
     client.login(process.env.TOKEN);
 
 
-}
+// }
 
