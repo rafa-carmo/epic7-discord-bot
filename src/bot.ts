@@ -225,5 +225,5 @@ app.get('/', (req, res) => {
     return res.sendStatus(200)   
 })
 
-app.listen(3333, ()=>{console.log('server iniciado')})
+app.listen(process.env.PORT || 5000, ()=>{console.log('server iniciado')})
 
