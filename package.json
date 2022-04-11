@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/bot.ts",
-    "start": "node .dist/bot.js",
+    "start": "node .",
     "postinstall": "tsc",
     "codegen": "graphql-codegen --config codegen.yml"
   },
