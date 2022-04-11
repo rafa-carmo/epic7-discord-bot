@@ -1,8 +1,19 @@
 import 'dotenv/config'
-import {Client, Intents,} from "discord.js";
+import express, { Request, Response } from 'express';
+import {Client, Intents} from "discord.js";
 import WOK from 'wokcommands'
 import path from 'path'
 
+
+const PORT = process.env.PORT || 5000;
+const app = express();
+
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/', (_: Request, response: Response) => {
+  response.sendStatus(200);
+});
 
 
 
@@ -32,5 +43,6 @@ else{
     client.login(process.env.TOKEN);
 
 
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
 }
 
