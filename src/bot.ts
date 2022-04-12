@@ -30,15 +30,17 @@ if (cluster.isMaster) {
 else{
 
     let client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
-
     client.on("ready", async () => {
+      console.log(client.guilds.cache.map((guild)=>guild.id).length)
         new WOK(client, {
             commandsDir: path.join(__dirname, 'commands'),
-            // typeScript: true
+            typeScript: !!process.env.DEV
         })
     })
-
-
+    client.on("guildCreate", (guild)=>{
+      console.log("Guilda adicionada", guild.name)
+    })
+    
     
     client.login(process.env.TOKEN);
 
