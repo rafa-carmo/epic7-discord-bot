@@ -108,7 +108,7 @@ export default {
             { name: '\u200B', value: '\u200B', inline: true },
             { name: 'Effectiveness', value: character.characterStatus.effectiveness, inline: true },
             { name: 'Effect Resistance', value: character.characterStatus.effectResistance, inline: true },
-            { name: 'Speed', value: character.characterStatus.speed, inline: true },
+            { name: 'Speed', value: character.characterStatus.speed.replace('%', ''), inline: true },
 
             { name: '\u200B', value: '\u200B' },
             { name: 'Position', value: ' - ', inline: false }
